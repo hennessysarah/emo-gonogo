@@ -13,15 +13,11 @@ import numpy as np
 
 
 
-datafolder = "/Volumes/MusicProject/AllMatlabScripts/fMRI/Emo_Go_NoGo/data"
+datafolder = "Emo_Go_NoGo/data"
 subjectlist = [elem for elem in os.listdir(datafolder) if "run" in elem]
 
 
 print ('your subject list is:',subjectlist)
-
-#note: how does it know who the subject is?
-# and how does it know what run it is on
-
 
 for subject in subjectlist: #subject = indiv file
     subj = subject[:-20]
@@ -29,7 +25,7 @@ for subject in subjectlist: #subject = indiv file
     
     
     log = datafolder + '/%s_emo_gonogo_run%s.txt' %(subj,run)
-    evpath = "/Volumes/MusicProject/AllMatlabScripts/fMRI/Emo_Go_NoGo/EV"
+    evpath = "Emo_Go_NoGo/EV"
     
     evfolder = evpath + '/%s_%s_evs' %(subj, run) 
     if os.path.exists(evfolder):
